@@ -4,4 +4,4 @@ export default function () {
   element.innerHTML = 'Hello broh!';
 
   return element;
-};
+}

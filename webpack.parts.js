@@ -39,3 +39,19 @@ exports.devServer = function(options) {
     ]
   };
 };
+
+exports.lintJavaScript = function(paths) {
+  return {
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          include: paths,
+
+          use: 'eslint-loader',
+          enforce: 'pre'
+        }
+      ]
+    }
+  };
+};

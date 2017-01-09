@@ -22,7 +22,8 @@ const common = merge(
       new HtmlWebpackPlugin({
         title: 'Webpack demo'
       })
-    ]
+    ],
+    parts.lintJavaScript(PATHS.app)
   }
 );
 
@@ -43,4 +44,4 @@ module.exports = function(env) {
       port: process.env.PORT
     })
   );
-}
+};
