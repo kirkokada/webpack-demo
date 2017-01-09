@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
+const parts = require('./webpack.parts');
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
@@ -34,8 +35,12 @@ module.exports = function(env) {
         hints: false
       },
       plugins: [
-        new webpack.NamedModulesPlugin();
+        new webpack.NamedModulesPlugin()
       ]
-    }
+    },
+    parts.devServer({
+      host: process.env.HOST,
+      port: process.env.PORT
+    })
   );
 }
