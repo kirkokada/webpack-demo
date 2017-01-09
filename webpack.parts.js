@@ -1,5 +1,7 @@
 const webpack = require('webpack');
 
+const extractTextPlugin = require('extract-text-webpack-plugin');
+
 exports.devServer = function(options) {
   return {
     devServer: {
@@ -53,5 +55,46 @@ exports.lintJavaScript = function(paths) {
         }
       ]
     }
+  };
+};
+
+exports.loadCSS = function(paths) {
+  return {
+    module: {
+      rules: [
+        {
+          test: /\.css/,
+          // Restrict extraction process to the given paths
+          include: paths,
+
+          use: ['style-loader', 'css-loader']
+        }
+      ]
+    }
+  };
+};
+
+exports.extractCSS = function(paths) {
+  return {
+    module: {
+      rules: [
+        // Extract CSS during build
+        {
+          test: /\.css$/,
+          // Restrict extraction process to the given
+          // paths.
+          include: paths,
+
+          loader: extractTextPlugin.extract({
+            fallbackLoader: 'style-loader',
+            loader: 'css-loader'
+          })
+        }
+      ]
+    },
+    plugins: [
+      // Output extracted CSS to a file
+      new extractTextPlugin('[name].css')
+    ]
   };
 };

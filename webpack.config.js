@@ -23,11 +23,17 @@ const common = merge(
         title: 'Webpack demo'
       })
     ],
-    parts.lintJavaScript(PATHS.app)
-  }
+  },
+  parts.lintJavaScript(PATHS.app)
 );
 
 module.exports = function(env) {
+  if (env == 'production') {
+    return merge(
+      common,
+      parts.extractCSS()
+    );
+  }
   return merge(
     common,
     {
@@ -39,6 +45,7 @@ module.exports = function(env) {
         new webpack.NamedModulesPlugin()
       ]
     },
+    parts.loadCSS(),
     parts.devServer({
       host: process.env.HOST,
       port: process.env.PORT

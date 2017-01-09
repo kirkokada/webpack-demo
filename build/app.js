@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -74,22 +74,49 @@
 /* harmony default export */ exports["a"] = function () {
   const element = document.createElement('h1');
 
-  element.innerHTML = 'Hello world';
+  element.innerHTML = 'Hello broh!';
 
   return element;
-};;
+};
 
 
 /***/ },
 /* 1 */
+/***/ function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ },
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__main_css__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__main_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__main_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__component__ = __webpack_require__(0);
 
 
-document.body.appendChild(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__component__["a" /* default */])());
+
+let demoComponent = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__component__["a" /* default */])();
+
+document.body.appendChild(demoComponent);
+
+// HMR interface
+if(false) {
+  // Capture hot update
+  module.hot.accept('./component', () => {
+    console.log('hello!');
+    // We have to go through CommonJS here and capture the
+    // default export explicitly!
+    const nextComponent = require('./component').default();
+
+    // Replace old content with the hot loaded one
+    document.body.replaceChild(nextComponent, demoComponent);
+
+    demoComponent = nextComponent;
+  });
+}
 
 
 /***/ }
