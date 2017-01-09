@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const merge = require('webpack-merge')
+const merge = require('webpack-merge');
+const webpack = require('webpack');
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
@@ -25,5 +26,16 @@ const common = merge(
 );
 
 module.exports = function(env) {
-  return merge(common);
+  return merge(
+    common,
+    {
+      // Disable performance hits during development
+      performance: {
+        hints: false
+      },
+      plugins: [
+        new webpack.NamedModulesPlugin();
+      ]
+    }
+  );
 }
