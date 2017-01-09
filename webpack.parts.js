@@ -121,3 +121,19 @@ exports.purifyCSS = function(paths) {
     ]
   };
 };
+
+exports.lintCSS = function(paths) {
+  return {
+    module: {
+      rules: [
+        {
+          test: /\.css$/,
+          include: paths,
+
+          use: 'postcss-loader',
+          enforce: 'pre'
+        }
+      ]
+    }
+  };
+};

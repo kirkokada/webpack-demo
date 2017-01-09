@@ -24,6 +24,7 @@ const common = merge(
       })
     ],
   },
+  parts.lintCSS(PATHS.app),
   parts.lintJavaScript(PATHS.app)
 );
 
