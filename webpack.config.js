@@ -32,6 +32,7 @@ module.exports = function(env) {
   if (env == 'production') {
     return merge(
       common,
+      parts.generateSourcemaps('source-map'),
       parts.extractCSS(),
       parts.purifyCSS()
     );
@@ -47,6 +48,7 @@ module.exports = function(env) {
         new webpack.NamedModulesPlugin()
       ]
     },
+    parts.generateSourcemaps('eval-source-map'),
     parts.loadCSS(),
     parts.devServer({
       host: process.env.HOST,
