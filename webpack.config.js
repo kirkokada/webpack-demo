@@ -32,6 +32,7 @@ module.exports = function(env) {
   if (env == 'production') {
     return merge(
       common,
+      parts.loadJavaScript(PATHS.app),
       parts.extractBundles([
         {
           name: 'vendor',
