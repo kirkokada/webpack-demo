@@ -39,6 +39,7 @@ module.exports = function(env) {
           entries: ['react']
         }
       ]),
+      parts.clean(PATHS.build),
       parts.generateSourcemaps('source-map'),
       parts.extractCSS(),
       parts.purifyCSS()
