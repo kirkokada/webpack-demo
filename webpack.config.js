@@ -39,6 +39,7 @@ module.exports = function(env) {
         }
       },
       parts.loadJavaScript(PATHS.app),
+      parts.minifyJavaScript('souce-map'),
       parts.extractBundles([
         {
           name: 'vendor',
