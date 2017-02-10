@@ -3,6 +3,8 @@ const PurifyCSSPlugin = require('purifycss-webpack-plugin');
 const extractTextPlugin = require('extract-text-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const GitRevisionPlugin = require('git-revision-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const cssnano = require('cssnano');
 
 exports.devServer = function(options) {
   return {
@@ -208,6 +210,30 @@ exports.attachRevision = function() {
       new webpack.BannerPlugin({
         banner: new GitRevisionPlugin().version(),
       }),
+    ],
+  };
+};
+
+exports.minifyJavaScript = function({ useSourceMap }) {
+  return {
+    plugins: [
+      new webpack.optimize.UglifyJsPlugin({
+        sourceMap: useSourceMap,
+        compress: {
+          warnings: false,
+        },
+      }),
+    ],
+  };
+};
+
+exports.minifyCSS = function({ options }) {
+  return {
+    plugins: [
+      new OptimizeCSSAssetsPlugin({
+        cssProcessor: cssnano,
+        cssProcessorOptions: options,
+      })
     ],
   };
 };

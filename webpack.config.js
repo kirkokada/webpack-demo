@@ -33,6 +33,13 @@ module.exports = function(env) {
     return merge(
       common,
       {
+        performance: {
+          hints: 'warning', // error or false are valid too
+          maxEntrypointSize: 100000, // in bytes
+          maxAssetSize: 50000, // in bytes
+        }
+      },
+      {
         output: {
           // Tweak this to match your GitHub project name
           publicPath: '/webpack-demo/'
@@ -46,6 +53,14 @@ module.exports = function(env) {
         }
       ]),
       parts.clean(PATHS.build),
+      parts.minifyJavaScript({ useSourceMap: true }),
+      parts.minifyCSS({
+        options: {
+          discardComments: {
+            removeAll: true,
+          },
+        },
+      }),
       parts.attachRevision(),
       parts.generateSourcemaps('source-map'),
       parts.extractCSS(),

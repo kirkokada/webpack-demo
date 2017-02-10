@@ -1,14 +1,3 @@
-/*! 1bbab9b */
-webpackJsonp([0],{
-
-/***/ 36:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony default export */ __webpack_exports__["default"] = 'Hello from lazy';
-
-/***/ })
-
-});
+/*! 8e78c04 */
+webpackJsonp([0],{36:function(e,l,o){"use strict";Object.defineProperty(l,"__esModule",{value:!0}),l.default="Hello from lazy"}});
 //# sourceMappingURL=0.js.map
