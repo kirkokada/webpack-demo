@@ -46,6 +46,7 @@ module.exports = function(env) {
         }
       ]),
       parts.clean(PATHS.build),
+      parts.attachRevision(),
       parts.generateSourcemaps('source-map'),
       parts.extractCSS(),
       parts.purifyCSS()
