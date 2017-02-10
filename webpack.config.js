@@ -64,7 +64,11 @@ module.exports = function(env) {
       parts.attachRevision(),
       parts.generateSourcemaps('source-map'),
       parts.extractCSS(),
-      parts.purifyCSS()
+      parts.purifyCSS(),
+      parts.setFreeVariable(
+        'process.env.NODE_ENV',
+        'production'
+      )
     );
   }
   return merge(

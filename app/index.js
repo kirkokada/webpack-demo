@@ -2,6 +2,7 @@ import 'react';
 import 'purecss';
 import './main.css';
 import component from './component';
+import { bake } from './shake'; bake();
 
 let demoComponent = component();
 
