@@ -1,3 +1,4 @@
+/*! 1bbab9b */
 webpackJsonp([0],{
 
 /***/ 36:
@@ -6,7 +7,6 @@ webpackJsonp([0],{
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = 'Hello from lazy';
-
 
 /***/ })
 

@@ -1,3 +1,4 @@
+/*! 1bbab9b */
 webpackJsonp([1],{
 
 /***/ 19:
@@ -5,22 +6,21 @@ webpackJsonp([1],{
 
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = function () {
-  const element = document.createElement('h1');
+  var element = document.createElement('h1');
 
   element.className = 'pure-button';
   element.innerHTML = 'Hello broh!';
 
-  element.onclick = () => {
-    __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 36)).then((lazy) => {
+  element.onclick = function () {
+    __webpack_require__.e/* import() */(0).then(__webpack_require__.bind(null, 36)).then(function (lazy) {
       element.textContent = lazy.default;
-    }).catch((err) => {
+    }).catch(function (err) {
       console.error(err);
     });
   };
 
   return element;
 };
-
 
 /***/ }),
 
@@ -55,18 +55,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-let demoComponent = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__component__["a" /* default */])();
+var demoComponent = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__component__["a" /* default */])();
 
 document.body.appendChild(demoComponent);
 
 // HMR interface
-if(false) {
+if (false) {
   // Capture hot update
-  module.hot.accept('./component', () => {
+  module.hot.accept('./component', function () {
     console.log('hello!');
     // We have to go through CommonJS here and capture the
     // default export explicitly!
-    const nextComponent = require('./component').default();
+    var nextComponent = require('./component').default();
 
     // Replace old content with the hot loaded one
     document.body.replaceChild(nextComponent, demoComponent);
@@ -74,7 +74,6 @@ if(false) {
     demoComponent = nextComponent;
   });
 }
-
 
 /***/ })
 

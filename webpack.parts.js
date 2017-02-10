@@ -1,8 +1,8 @@
 const webpack = require('webpack');
 const PurifyCSSPlugin = require('purifycss-webpack-plugin');
 const extractTextPlugin = require('extract-text-webpack-plugin');
-
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const GitRevisionPlugin = require('git-revision-webpack-plugin');
 
 exports.devServer = function(options) {
   return {
@@ -199,5 +199,15 @@ exports.clean = function(path) {
     plugins: [
       new CleanWebpackPlugin([path])
     ]
+  };
+};
+
+exports.attachRevision = function() {
+  return {
+    plugins: [
+      new webpack.BannerPlugin({
+        banner: new GitRevisionPlugin().version(),
+      }),
+    ],
   };
 };
