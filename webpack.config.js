@@ -37,12 +37,17 @@ module.exports = function(env) {
           hints: 'warning', // error or false are valid too
           maxEntrypointSize: 100000, // in bytes
           maxAssetSize: 50000, // in bytes
-        }
+        },
+        plugins: [
+          new webpack.HashedModuleIdsPlugin(),
+        ],
       },
       {
         output: {
           // Tweak this to match your GitHub project name
-          publicPath: '/webpack-demo/'
+          publicPath: '/webpack-demo/',
+          chunkFilename: 'scripts/[chunkhash:8].js',
+          filename: '[name].[chunkhash:8].js',
         }
       },
       parts.loadJavaScript(PATHS.app),

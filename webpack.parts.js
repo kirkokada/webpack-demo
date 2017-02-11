@@ -98,7 +98,7 @@ exports.extractCSS = function(paths) {
     },
     plugins: [
       // Output extracted CSS to a file
-      new extractTextPlugin('[name].css')
+      new extractTextPlugin('[name].[contenthash:8].css')
     ]
   };
 };

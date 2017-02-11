@@ -1,3 +1,0 @@
-/*! ed68c74 */
-webpackJsonp([1],{15:function(n,t,e){"use strict";t.a=function(){var n=document.createElement("h1");return n.className="pure-button",n.innerHTML="Hello broh!",n.onclick=function(){e.e(0).then(e.bind(null,33)).then(function(t){n.textContent=t.default}).catch(function(n){console.error(n)})},n}},16:function(n,t,e){"use strict";e.d(t,"a",function(){return o});var o=function(){console.log("bake")}},17:function(n,t){},18:function(n,t){},31:function(n,t,e){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=e(5),c=(e.n(o),e(18)),u=(e.n(c),e(17)),i=(e.n(u),e(15)),r=e(16);e.i(r.a)();var a=e.i(i.a)();document.body.appendChild(a)}},[31]);
-//# sourceMappingURL=app.js.map
