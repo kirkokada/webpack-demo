@@ -1,0 +1,3 @@
+/*! 492e723 */
+webpackJsonp([2,3],{"1Q41":function(n,t){},"2twT":function(n,t,e){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var c=e("U7vG"),o=(e.n(c),e("c5m/")),u=(e.n(o),e("1Q41")),i=(e.n(u),e("YL6N")),r=e("yUGL");e.i(r.a)();var a=e.i(i.a)();document.body.appendChild(a)},YL6N:function(n,t,e){"use strict";t.a=function(){var n=document.createElement("h1");return n.className="pure-button",n.innerHTML="Hello broh!",n.onclick=function(){e.e(0).then(e.bind(null,"co9Y")).then(function(t){n.textContent=t.default}).catch(function(n){console.error(n)})},n}},"c5m/":function(n,t){},yUGL:function(n,t,e){"use strict";e.d(t,"a",function(){return c});var c=function(){console.log("bake")}}},["2twT"]);
+//# sourceMappingURL=app.9e877504.js.map

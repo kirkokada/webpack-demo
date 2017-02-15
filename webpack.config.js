@@ -55,7 +55,10 @@ module.exports = function(env) {
         {
           name: 'vendor',
           entries: ['react']
-        }
+        },
+        {
+          name: 'manifest',
+        },
       ]),
       parts.clean(PATHS.build),
       parts.minifyJavaScript({ useSourceMap: true }),
